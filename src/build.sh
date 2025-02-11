@@ -234,7 +234,7 @@ function build_pkg {
     SBUILD_PREFIX=""
   fi
   SBUILD_OPTS="--verbose --chroot=sbuild --no-clean-source --no-run-lintian --dist=$DEB_DISTRO $opts"
-  ici_label "${SBUILD_QUIET[@]}" "$SBUILD_PREFIX" sg sbuild -c "sbuild $SBUILD_OPTS" || return 4
+  ici_label "${SBUILD_QUIET[@]}" "$SBUILD_PREFIX sbuild $SBUILD_OPTS" || return 4
 
   "${CCACHE_QUIET[@]}" ici_label ccache -sv || return 1
   BUILT_PACKAGES+=("$(deb_pkg_name "$pkg_name"): $version_link")
