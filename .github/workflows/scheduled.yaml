@@ -9,12 +9,14 @@ on:
 
 jobs:
   build:
-    strategy:
-      fail-fast: false
-      matrix:
-        DEB_DISTRO: [jammy, noble]
-        ARCH: [x64, arm64]
+    # strategy:
+    #   fail-fast: false
+    #   matrix:
+    #     DEB_DISTRO: [jammy, noble]
+    #     ARCH: [x64, arm64]
     uses: ./.github/workflows/scheduled_job.yaml
     with:
-      DEB_DISTRO: ${{ matrix.DEB_DISTRO }}
-      ARCH: ${{ matrix.ARCH }}
+      # DEB_DISTRO: ${{ matrix.DEB_DISTRO }}
+      # ARCH: ${{ matrix.ARCH }}
+      DEB_DISTRO: noble
+      ARCH: arm64
